@@ -60,10 +60,10 @@ void BoardInit(void)
     ConfigIntTimer1(T1_INT_ON | T1_INT_PRIOR_1 | T1_INT_SUB_PRIOR_0);// Set up the core timer interrupt with a priority of 2 and zero sub-priority
 
     /// I2C 1 SETUP ////
-    i2c_init(MPU_I2C, MASTER, 0); //Enable I2C channel
+     i2c_init(MPU_I2C, MASTER, 0); //Enable I2C channel
 
     /// EXTERNAL INTERRUPTIONS SETUP ////
-    ConfigINT2(EXT_INT_PRI_2 | RISING_EDGE_INT | EXT_INT_ENABLE); // EXT INT2
+    // ConfigINT2(EXT_INT_PRI_2 | RISING_EDGE_INT | EXT_INT_ENABLE); // EXT INT2
     // EXT INT 1
 //    mINT1SetIntPriority(4);	/* Set the Interrupt Priority */
 //    mINT1SetIntSubPriority(2);	/* Set Interrupt Subpriority Bits for INT1 */

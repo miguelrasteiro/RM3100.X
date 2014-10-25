@@ -16,7 +16,7 @@
 // timer 1
 UINT8 T1overflow = 1;
 // external mpu int
-BYTE new_data=0;
+//BYTE new_data=0;
 
 
 #if !MAG_EXT_CAL                    /**< Identity matrix if not using external calibration data. */
@@ -50,11 +50,11 @@ void __ISR(TIMER_1_INT_VECTOR, ipl1) _Timer1Handler(void) {
     T1overflow ++;
 }
 
-    void __ISR(EXTERNAL_2_INT_VECTOR, ipl2) INT2Interrupt() {
-
-        mINT2ClearIntFlag();
-        new_data = 1;
-    }
+//    void __ISR(EXTERNAL_2_INT_VECTOR, ipl2) INT2Interrupt() {
+//
+//        mINT2ClearIntFlag();
+//        new_data = 1;
+//    }
 
 
 /*================================================================
@@ -90,12 +90,12 @@ int main(void)
             requestSingleMeasurement ();
         }
 
-//        if(getDataReadyStatus ()){
-        if(new_data){
+        if(getDataReadyStatus ()){
+//        if(new_data){
             LATAbits.LATA2 = 1;
             time_elapsed = time_elapsed + time_to_send;
 
-            new_data=0;
+//            new_data=0;
 
             raw = ReadRM3100Raw ( );
 
