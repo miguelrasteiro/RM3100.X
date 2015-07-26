@@ -1,7 +1,7 @@
 
 # RM3100.X
  - A simple driver for RM3100 PNI Geomagnetic Sensor. 
- - Tested in PIC32MX795F512L.
+ - Tested with a PIC32MX795F512L.
  - I2C communication.
  
 ## Usage
